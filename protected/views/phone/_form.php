@@ -69,13 +69,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'avaliablity'); ?>
-		<?php echo $form->textField($model,'avaliablity',array('size'=>30,'maxlength'=>30)); ?>
+		
+                <?php echo $form->dropDownList($model, 'avaliablity', Lookup::phoneAvaliablity()); ?>
 		<?php echo $form->error($model,'avaliablity'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->dropDownList($model, 'type', Lookup::phoneType()); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 

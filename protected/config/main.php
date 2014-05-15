@@ -55,8 +55,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=gcom',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'zpazpa',
+			'username' => 'gcom',
+			'password' => 'hjNANBL7fwtMxqmE',
 			'charset' => 'utf8',
 		),
 		
