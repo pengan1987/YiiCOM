@@ -19,12 +19,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'brand'); ?>
-		<?php echo $form->textField($model,'brand',array('size'=>40,'maxlength'=>40)); ?>
-		<?php echo $form->error($model,'brand'); ?>
-	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'customername'); ?>
 		<?php echo $form->textField($model,'customername',array('size'=>30,'maxlength'=>30)); ?>
@@ -39,14 +34,63 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'avaliablility'); ?>
-		<?php echo $form->textField($model,'avaliablility',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->dropDownList($model, 'avaliablility', Lookup::computerAvaliablity()); ?>
 		<?php echo $form->error($model,'avaliablility'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'year'); ?>
-		<?php echo $form->textField($model,'year',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'year'); ?>
+		<?php echo $form->labelEx($model,'Pic'); ?>
+		<?php echo $form->textField($model,'Pic',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'Pic'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'ebay'); ?>
+		<?php echo $form->dropDownList($model, 'ebay', Lookup::computerEbayAvaliablity()); ?>
+		<?php echo $form->error($model,'ebay'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'sellingprice'); ?>
+		<?php echo $form->textField($model,'sellingprice'); ?>
+		<?php echo $form->error($model,'sellingprice'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'soldprice'); ?>
+		<?php echo $form->textField($model,'soldprice',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'soldprice'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'SbaskedforID'); ?>
+		<?php echo $form->textField($model,'SbaskedforID',array('size'=>60,'maxlength'=>999)); ?>
+		<?php echo $form->error($model,'SbaskedforID'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'SBasked'); ?>
+		<?php echo $form->textField($model,'SBasked',array('size'=>60,'maxlength'=>300)); ?>
+		<?php echo $form->error($model,'SBasked'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'onsale'); ?>
+		<?php echo $form->dropDownList($model, 'onsale', Lookup::computerOnSale()); ?>
+		<?php echo $form->error($model,'onsale'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'secprice'); ?>
+		<?php echo $form->textField($model,'secprice'); ?>
+		<?php echo $form->error($model,'secprice'); ?>
+	</div>
+        <hr />
+        <h3>General Info</h3>
+        <div class="row">
+		<?php echo $form->labelEx($model,'brand'); ?>
+		<?php echo $form->dropDownList($model, 'brand', Lookup::computerBrand()); ?>
+		<?php echo $form->error($model,'brand'); ?>
 	</div>
 
 	<div class="row">
@@ -66,10 +110,18 @@
 		<?php echo $form->textField($model,'serialnumb',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'serialnumb'); ?>
 	</div>
-
+        
 	<div class="row">
+		<?php echo $form->labelEx($model,'year'); ?>
+		<?php echo $form->textField($model,'year',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'year'); ?>
+	</div>
+        
+        <hr />
+        <h3>Hardware Configuration</h3>
+        <div class="row">
 		<?php echo $form->labelEx($model,'cpu'); ?>
-		<?php echo $form->textField($model,'cpu',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model, 'cpu', Lookup::computerCPUBrand()); ?>
 		<?php echo $form->error($model,'cpu'); ?>
 	</div>
 
@@ -77,6 +129,12 @@
 		<?php echo $form->labelEx($model,'cpumodel'); ?>
 		<?php echo $form->textField($model,'cpumodel',array('size'=>40,'maxlength'=>40)); ?>
 		<?php echo $form->error($model,'cpumodel'); ?>
+	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'cpucores'); ?>
+		<?php echo $form->textField($model,'cpucores',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'cpucores'); ?>
 	</div>
 
 	<div class="row">
@@ -87,7 +145,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'gcard'); ?>
-		<?php echo $form->textField($model,'gcard',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model, 'gcard', Lookup::vgaBrand()); ?>
 		<?php echo $form->error($model,'gcard'); ?>
 	</div>
 
@@ -111,7 +169,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'HDType'); ?>
-		<?php echo $form->textField($model,'HDType',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model, 'HDType', Lookup::hdType()); ?>
 		<?php echo $form->error($model,'HDType'); ?>
 	</div>
 
@@ -123,13 +181,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usbtype'); ?>
-		<?php echo $form->textField($model,'usbtype',array('size'=>40,'maxlength'=>40)); ?>
+		<?php echo $form->dropDownList($model, 'usbtype', Lookup::usbType()); ?>
 		<?php echo $form->error($model,'usbtype'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usbN'); ?>
-		<?php echo $form->textField($model,'usbN',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model, 'usbN', Lookup::usbNumber()); ?>
 		<?php echo $form->error($model,'usbN'); ?>
 	</div>
 
@@ -162,16 +220,17 @@
 		<?php echo $form->textField($model,'lan',array('size'=>11,'maxlength'=>11)); ?>
 		<?php echo $form->error($model,'lan'); ?>
 	</div>
-
-	<div class="row">
+        <hr />
+        <h3>Software Configuration</h3>
+        <div class="row">
 		<?php echo $form->labelEx($model,'OS'); ?>
-		<?php echo $form->textField($model,'OS',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model, 'OS', Lookup::computerOSBrand()); ?>
 		<?php echo $form->error($model,'OS'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'OSversion'); ?>
-		<?php echo $form->textField($model,'OSversion',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->dropDownList($model, 'OSversion', Lookup::computerOSVersion()); ?>
 		<?php echo $form->error($model,'OSversion'); ?>
 	</div>
 
@@ -180,61 +239,7 @@
 		<?php echo $form->textField($model,'SystemType',array('size'=>11,'maxlength'=>11)); ?>
 		<?php echo $form->error($model,'SystemType'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Pic'); ?>
-		<?php echo $form->textField($model,'Pic',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'Pic'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ebay'); ?>
-		<?php echo $form->textField($model,'ebay',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'ebay'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sellingprice'); ?>
-		<?php echo $form->textField($model,'sellingprice'); ?>
-		<?php echo $form->error($model,'sellingprice'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'soldprice'); ?>
-		<?php echo $form->textField($model,'soldprice',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'soldprice'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'SbaskedforID'); ?>
-		<?php echo $form->textField($model,'SbaskedforID',array('size'=>60,'maxlength'=>999)); ?>
-		<?php echo $form->error($model,'SbaskedforID'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'SBasked'); ?>
-		<?php echo $form->textField($model,'SBasked',array('size'=>60,'maxlength'=>300)); ?>
-		<?php echo $form->error($model,'SBasked'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cpucores'); ?>
-		<?php echo $form->textField($model,'cpucores',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'cpucores'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'onsale'); ?>
-		<?php echo $form->textField($model,'onsale',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'onsale'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'secprice'); ?>
-		<?php echo $form->textField($model,'secprice'); ?>
-		<?php echo $form->error($model,'secprice'); ?>
-	</div>
-
+        <hr />
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
