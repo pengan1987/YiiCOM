@@ -60,7 +60,7 @@ class Computer extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('brand, customername, customercell, avaliablility, type, model, serialnumb, cpu, cpumodel, cpuspeed, ram, HardDrive, HDType, size, usbtype, usbN, DVDdrive, webcam, wifi, lan, OS, OSversion, SystemType, ebay, soldprice, SbaskedforID, SBasked, onsale, secprice', 'required'),
+			array('brand,  avaliablility, type, model, serialnumb, cpu, cpumodel, cpuspeed, ram, HardDrive, HDType, size, usbtype, usbN, DVDdrive, webcam, wifi, lan, OS, OSversion, SystemType, ebay,  SbaskedforID, SBasked, onsale, secprice', 'required'),
 			array('sellingprice, secprice', 'numerical', 'integerOnly'=>true),
 			array('brand, cpumodel, usbtype', 'length', 'max'=>40),
 			array('customername, customercell, avaliablility, year, type, model, OSversion, ebay, soldprice', 'length', 'max'=>30),
@@ -105,7 +105,7 @@ class Computer extends CActiveRecord
 			'cpu' => 'Cpu',
 			'cpumodel' => 'Cpumodel',
 			'cpuspeed' => 'Cpuspeed',
-			'gcard' => 'Gcard',
+			'gcard' => 'GPU Brand',
 			'gcardmodel' => 'Gcardmodel',
 			'ram' => 'Ram',
 			'HardDrive' => 'Hard Drive',
